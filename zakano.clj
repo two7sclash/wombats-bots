@@ -1,11 +1,14 @@
 (fn [state time-left]
   (def turn-directions [:right :left :about-face])
 
-  (let [command-options [(repeat 10 {:command {:action :move
-                                               :metadata {}}})
-                         (repeat 2 {:command {:action :turn
-                                              :metadata {:direction (rand-nth turn-directions)}}})
-                         (repeat 1 {:command {:action :shoot
-                                              :metadata {}}})]]
+  (let [command-options [(repeat 10 {:action :move
+                                     :metadata {}})
+                         (repeat 2 {:action :turn
+                                    :metadata {:direction (rand-nth turn-directions)}})
+                         (repeat 4 {:action :shoot
+                                      :metadata {}})
+                         (repeat 3 {:action :smoke
+                                    :metadata {}})]]
+
     {:command (rand-nth (flatten command-options))
-     :state {:test true}}))
+     :state {}}))
