@@ -14,3 +14,5 @@ def wombat(state, time_left):
         command,
         state
     }
+
+echo wombat()
